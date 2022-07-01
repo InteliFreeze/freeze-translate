@@ -1,0 +1,2 @@
+web: python translate.py
+worker: python translate.py
