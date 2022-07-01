@@ -1,2 +1,1 @@
-web: python translate.py
-worker: python translate.py
+web: gunicorn -w 4 -k uvicorn.workers.UvicornWorker translate:app

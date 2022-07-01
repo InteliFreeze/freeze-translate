@@ -3,14 +3,15 @@ from pydantic import BaseModel
 from googletrans import Translator
 
 class Text(BaseModel):
-    text: str = None;
+    text: str = "";
 
 app = FastAPI()
 
 @app.post("/en-to-pt/")
 async def create_item(item: Text):
     translator = Translator()
-    text = translator.translate(item.text, src='en', dest='pt')
-    return {'text_str': text, 'Status': 'success'}
+    translated = translator.translate(item.text, src='en', dest='pt')
+    
+    return {'text_str': translated.text, 'Status': 'success'}
 
 
