@@ -9,7 +9,7 @@ class Text(BaseModel):
 app = FastAPI()
 
 origins = [
-    "https://ifreeze.vercel.app/",
+    "https://ifreeze.vercel.app",
 ]
 
 app.add_middleware(
